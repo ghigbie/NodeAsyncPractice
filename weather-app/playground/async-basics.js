@@ -1,6 +1,6 @@
 console.log("Starting App");
 
-setTimeOut(() => {
+setTimeout(() => {
 	console.log("Inside of callback");
 }, 2000);
 

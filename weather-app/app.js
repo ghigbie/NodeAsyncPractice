@@ -16,9 +16,13 @@ const argv = yargs
 
 console.log(argv);
 
+var encodedAddress = encodeURIComponent(argv.address);
+console.log("=======================");
+console.log(encodedAddress)
+console.log("=======================");
 //request will take two arguments  //the first argument is an options object and the secodn is a callback that gets called when json comes back from api
 request({
-	url: "https://maps.googleapis.com/maps/api/geocode/json?address=1301%20lombard%20street%20philadelphia",
+	url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,
 	json: true
 }, (error, response, body) => {  
 	console.log(`Address: ${body.results[0].formatted_address}`);

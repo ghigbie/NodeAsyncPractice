@@ -1,14 +1,20 @@
 const request = require("request");
 const yargs = require("yargs");
 
-const argv = yargs.options
-	.opions({
+const argv = yargs
+	.options({
 		a: {
 			demand: true,
 			alias: "address",
-			describe: "Address that is needed to fetch weather"
+			describe: "Address that is needed to fetch weather",
+			string: true
 		}
 	})
+	.help()
+	.alias("help", "h")
+	.argv;
+
+console.log(argv);
 
 //request will take two arguments  //the first argument is an options object and the secodn is a callback that gets called when json comes back from api
 request({

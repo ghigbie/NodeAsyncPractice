@@ -34,7 +34,7 @@ var ulrDarkSky = `https://api.darksky.net/forecast/${apiKey}/${lat},${lng}`;
 request({
 		url: ulrDarkSky,
 		JSON: true
-	},(error, response, body)){
+	},(error, response, body) => {
 		if(error){
 			console.log(error)
 		}else if(response === null){
@@ -42,7 +42,7 @@ request({
 		}else if(body){
 			console.log(body.currently.temperature);
 		}
-	};
+	});
 
-	
+
 

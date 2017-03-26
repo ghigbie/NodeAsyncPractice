@@ -1,4 +1,4 @@
-var somePromise = new Promise((resolve, reject) => {
+var somePromise = new Promise((resolve, reject) = > {
 	resolve("Hey, it worked");
 });
 

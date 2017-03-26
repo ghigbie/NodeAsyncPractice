@@ -1,7 +1,7 @@
 const request = require("request");
 
 
-var geocodeAddress (address) => {
+var geocodeAddress = (address, calback) => {
 	var encodedAddress = encodeURIComponent(address);
 	console.log("=======================");
 	console.log(encodedAddress)
@@ -24,4 +24,4 @@ var geocodeAddress (address) => {
 	});
 }
 
-module.exports.geocodeAddress = geocodeAddress();
+module.exports.geocodeAddress = geocodeAddress;

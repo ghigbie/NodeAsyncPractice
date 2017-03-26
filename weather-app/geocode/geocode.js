@@ -14,7 +14,7 @@ var geocodeAddress = (address, callback) => {
 		if(error){
 			callback("Unable to connect to google servers.");
 		}else if(body.status === "ZERO_RESULTS"){
-			ccallback("Unable to find that address.");
+			callback("Unable to find that address.");
 		}else if(body.status === "OK"){
 			callback(undefined, {
 				address: body.results[0].formatted_address,

@@ -35,7 +35,13 @@ request({
 		url: ulrDarkSky,
 		json: true
 	},(error, response, body) => {
+		if(error){
+			console.log("Unable to connect to weather.io servers");
+		}else if(response.statusCode === "404"){
+			console.log("Unable to fetch weather. Please check your url.");
+		}else if(response.statusCode === "200"){
 			console.log(body.currently.temperature);
+		}
 	});
 
 

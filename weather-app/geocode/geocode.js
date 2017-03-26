@@ -3,9 +3,6 @@ const request = require("request");
 
 var geocodeAddress = (address, callback) => {
 	var encodedAddress = encodeURIComponent(address);
-	console.log("=======================");
-	console.log(encodedAddress)
-	console.log("=======================");
 	//request will take two arguments  //the first argument is an options object and the secodn is a callback that gets called when json comes back from api
 	request({
 		url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,

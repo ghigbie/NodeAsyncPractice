@@ -20,12 +20,14 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
 	if(errorMessage){
 		console.log(errorMessage);
 	}else{
-		console.log(`The weather for the address, ${results.address}`);
+		console.log("================================================");
+		console.log(`The weather for the following address: ${results.address}`);
 		weather.getWeather(results.latitude, results.longitude, (errorMessage, weatherResults) => {
 			if(errorMessage){
 				console.log(errorMessage);
 			}else{
-				console.log(`***It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}`);
+				console.log(`***It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature} ***`);
+				console.log("================================================");
 			}
 		});
 	}

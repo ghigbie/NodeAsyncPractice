@@ -6,13 +6,14 @@ var lng = "-122.4233";
 
 var ulrDarkSky = `https://api.darksky.net/forecast/${apiKey}/${lat},${lng}`;
 
-var getWeather = () => {
+var getWeather = (lat, lng, callback) => {
 	request({
 		url: ulrDarkSky,
 		json: true
 	},(error, response, body) => {
 		if(!error && response.statusCode == "200"){
-			console.log(`******** ${body.currently.temperature} *********`);
+			console.log(`*** The current temperature is ${body.currently.temperature}, but it feels like 
+				${body.currently.apparentTemperature}. ***`);
 		}else{
 			console.log("======Unable to fetch weather=======");
 		}

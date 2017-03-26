@@ -16,21 +16,21 @@ const argv = yargs
 	.alias("help", "h")
 	.argv;
 
-// geocode.geocodeAddress(argv.address, (errorMessage, results) => {
-// 	if(errorMessage){
-// 		console.log(errorMessage);
-// 	}else{
-// 		console.log(JSON.stringify(results, undefined, 2));
-// 	}
-
-//arguments - lat, lng, callback
-
-var lat = "37.8267";
-var lng = "-122.4233";
-weather.getWeather(lat, lng, (errorMessage, weatherResults) => {
+geocode.geocodeAddress(argv.address, (errorMessage, results) => {
 	if(errorMessage){
 		console.log(errorMessage);
 	}else{
-		console.log(JSON.stringify(weatherResults, undefined, 2));
+		console.log(`The weather for the address, ${results.address}`);
+		weather.getWeather(results.latitude, results.longitude, (errorMessage, weatherResults) => {
+			if(errorMessage){
+				console.log(errorMessage);
+			}else{
+				console.log(`***It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}`);
+			}
+		});
 	}
 });
+	
+
+
+

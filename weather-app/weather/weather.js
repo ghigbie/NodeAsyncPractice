@@ -6,7 +6,8 @@ var lng = "-122.4233";
 
 var ulrDarkSky = `https://api.darksky.net/forecast/${apiKey}/${lat},${lng}`;
 
-request({
+var getWeather = () => {
+	request({
 		url: ulrDarkSky,
 		json: true
 	},(error, response, body) => {
@@ -16,3 +17,7 @@ request({
 			console.log("======Unable to fetch weather=======");
 		}
 	});
+}
+
+
+module.exports.getWeather = getWeather;

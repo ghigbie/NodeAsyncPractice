@@ -27,10 +27,10 @@ const argv = yargs
 
 var lat = "37.8267";
 var lng = "-122.4233";
-weather.getWeather(lat, lng, (errorMessage, results) => {
+weather.getWeather(lat, lng, (errorMessage, weatherResults) => {
 	if(errorMessage){
 		console.log(errorMessage);
 	}else{
-		console.log(JSON.stringify(results, uendefined, 2));
+		console.log(JSON.stringify(results, undefined, 2));
 	}
 });

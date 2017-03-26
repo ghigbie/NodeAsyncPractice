@@ -1,7 +1,7 @@
 const request = require("request");
 
 
-var geocodeAddress = (address, calback) => {
+var geocodeAddress = (address, callback) => {
 	var encodedAddress = encodeURIComponent(address);
 	console.log("=======================");
 	console.log(encodedAddress)
@@ -12,14 +12,15 @@ var geocodeAddress = (address, calback) => {
 		json: true
 	}, (error, response, body) => {  
 		if(error){
-			console.log("Unable to connect to google servers.");
+			callback("Unable to connect to google servers.");
 		}else if(body.status === "ZERO_RESULTS"){
-			console.log("Unable to find that address.");
+			ccallback("Unable to find that address.");
 		}else if(body.status === "OK"){
-			console.log("Fethching address");
-			console.log(`Address: ${body.results[0].formatted_address}`);
-			console.log(`Lattitude: ${body.results[0].geometry.location.lat}`);
-			console.log(`Longitude: ${body.results[0].geometry.location.lng}`);
+			callback(undefined, {
+				address: body.results[0].formatted_address,
+				latitude: body.results[0].geometry.location.lat,
+				longitude: body.results[0].geometry.location.lng
+			});
 		}
 	});
 }

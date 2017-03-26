@@ -24,3 +24,4 @@ function geocodeAddress(address){
 	});
 }
 
+module.export = geocode;

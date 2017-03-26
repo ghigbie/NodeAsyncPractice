@@ -16,6 +16,9 @@ const argv = yargs
 
 console.log(argv);
 
+const geocode = require("geocode");
+
+
 var encodedAddress = encodeURIComponent(argv.address);
 console.log("=======================");
 console.log(encodedAddress)
@@ -36,3 +39,4 @@ request({
 		console.log(`Longitude: ${body.results[0].geometry.location.lng}`);
 	}
 });
+

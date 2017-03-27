@@ -10,8 +10,8 @@ var asyncAdd = (a, b) => {
 	});
 };
 
-asyncAdd(5, 7).then((res) => {
-	console.log("Result: ", res);
+asyncAdd(5, 7).then((result) => {
+	console.log("Result: ", result);
 }, (errorMessage) => {
 	console.log(errorMessage);
 });

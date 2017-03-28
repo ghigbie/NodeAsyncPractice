@@ -19,11 +19,11 @@ var geocodeAddres = (address) => {
 			});
 		}
 	});
-	}
-};
+});
+}
 
 geocodeAddres("96718").then((location) => {
-	console.log(JSON.stringify(location, undefied, 2);
-}, (errorMEssage) => {
-	console.log(errorMEssage);
+	console.log(JSON.stringify(location, undefied, 2));
+}, (errorMessage) => {
+	console.log(errorMessage);
 });
